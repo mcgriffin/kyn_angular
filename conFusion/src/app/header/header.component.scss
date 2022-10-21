@@ -1,0 +1,32 @@
+$dark-purple: #4527A0;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.icon_image{
+  right-padding: 5px;
+  border: yellow solid 1px;
+}
+
+.tagline{
+  padding-left: 14px;
+  border: yellow solid 1px;
+  font-size: 0.8em;
+}
+
+.icon_name{
+  font-size: 1.4em;
+  padding-bottom: 3px;
+  border: yellow solid 1px;
+}
+// .jumbotron {
+//     @include zero-margin(70px,30px);
+//     // background: $background-light ;
+//     color:floralwhite;
+//     min-height: 150px;
+// }
+.active{
+  background: $dark-purple;
+}

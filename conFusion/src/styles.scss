@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+
+span {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+  font-family: 'Comfortaa', cursive;
+}
+
+h3 {
+  padding: 0;
+  margin: 10;
+}
+
+.container {
+  margin: 20;
+  display: flex;
+}
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+.flex-spacer {
+  flex: 1 1 auto;
+}

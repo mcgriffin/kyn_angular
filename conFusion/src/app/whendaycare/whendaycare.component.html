@@ -1,0 +1,37 @@
+<mat-toolbar color ='primary'>
+  <span>when do you need childcare?</span>
+</mat-toolbar>
+
+<div class='container'
+  fxLayout='column'
+  fxLayoutGap = "10px"
+  fxLayoutAlign = 'center center'>
+
+<hr>
+
+<!--try loading in an expansion panel -->
+<div fxFlex>
+  <mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Click me!
+        <mat-panel-description>
+          <!--Here's the description -->
+        </mat-panel-description>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <p mat-chip-list class='chip_list_days'>
+        <mat-chip>s</mat-chip>
+        <mat-chip>m</mat-chip>
+        <mat-chip>t</mat-chip>
+        <mat-chip>w</mat-chip>
+        <mat-chip>t</mat-chip>
+        <mat-chip>f</mat-chip>
+      <p>Here's the primary content</p>
+  </mat-expansion-panel>
+</div>
+
+
+
+  <!-- <mat-chip color='primary' selected>primary</mat-chip>
+  <mat-chip color='secondary' selected>accent</mat-chip> -->
