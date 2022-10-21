@@ -13,6 +13,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatDialogModule } from '@angular/material/dialog';
+//import { MatInputModule } fro '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -28,6 +32,7 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { SearchComponent } from './search/search.component';
 import { PromotionService } from './services/promotion.service';
+import { LoginComponent } from './login/login.component';
 
 // import { AppRoutingModule } from "./app-routing";
 
@@ -45,6 +50,7 @@ import { PromotionService } from './services/promotion.service';
     HomeComponent,
     ContactComponent,
     SearchComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -52,7 +58,7 @@ import { PromotionService } from './services/promotion.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    // AppRoutingModule,
+    AppRoutingModule,
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
@@ -61,6 +67,10 @@ import { PromotionService } from './services/promotion.service';
     MatChipsModule,
     MatFormFieldModule,
     MatExpansionModule,
+    MatDialogModule,
+    //MatInputModule,
+    MatCheckboxModule,
+    FormsModule,
   ],
   //a provider is something you want to make available to your whole application.
   //DishService is a service for the whole app now
@@ -68,6 +78,11 @@ import { PromotionService } from './services/promotion.service';
     DishService,
     PromotionService
   ],
+
+  entryComponents: [
+    LoginComponent
+  ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
