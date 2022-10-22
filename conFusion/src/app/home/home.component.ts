@@ -20,8 +20,8 @@ constructor(private dishService: DishService,
   private promotionService: PromotionService) { }
 
 ngOnInit() {
-  this.dishService.getFeaturedDish().then(dish => this.dish = dish);
-  this.promotionService.getFeaturedPromotion().then(promotion => this.promotion = promotion);
+  this.dishService.getFeaturedDish().subscribe(dish => this.dish = dish);
+  this.promotionService.getFeaturedPromotion().subscribe(promotion => this.promotion = promotion);
 }
 
 onSelect(dish: Dish) {
