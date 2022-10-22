@@ -17,6 +17,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 //import { MatInputModule } fro '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+//import { MatSlideToggleModule } from '@angular/forms'; (this breaks things)
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -71,6 +75,10 @@ import { LoginComponent } from './login/login.component';
     //MatInputModule,
     MatCheckboxModule,
     FormsModule,
+    MatSelectModule,
+    //MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatProgressSpinnerModule
   ],
   //a provider is something you want to make available to your whole application.
   //DishService is a service for the whole app now

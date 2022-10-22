@@ -9,7 +9,7 @@
       <mat-card *ngIf='dish'>
         <mat-card-header>
           <mat-card-title>
-            <h3> {{ dish.daycare_name | uppercase }} </h3>
+            <h3 *ngIf='dish'>{{ dish.daycare_name | uppercase }} </h3>
           </mat-card-title>
         </mat-card-header>
         <img mat-card-image src="{{ dish.daycare_image }}" alt="{{ dish.daycare_name }}" >

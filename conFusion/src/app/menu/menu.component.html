@@ -14,7 +14,7 @@
 [routerLink]="['/dishdetail', dish.id] -->
 
 
-<div fxFlex>
+<div fxFlex *ngIf='dishes'>
   <mat-grid-list cols='2' rowHeight='200px'>
     <mat-grid-tile *ngFor="let dish of dishes" (click)='onSelect(dish)'>
       <img height='200px' src={{dish.daycare_image}} alt={{dish.daycare_name}}>
@@ -24,6 +24,10 @@
     </mat-grid-tile>
   </mat-grid-list>
   </div>
+  <div fxFlex [hidden]='dishes'>
+    <mat-spinner></mat-spinner><h4>loading ... please wait</h4>
+  </div>
+
 <app-dishdetail [dish]='selectedDish'></app-dishdetail>
 
 <app-wheredaycare></app-wheredaycare>
