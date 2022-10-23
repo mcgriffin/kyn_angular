@@ -10,13 +10,10 @@
 </div>
 
 
-<!--this is the routing that wasn't working. goes after *ngFor
-[routerLink]="['/dishdetail', dish.id] -->
-
-
 <div fxFlex *ngIf='dishes'>
   <mat-grid-list cols='2' rowHeight='200px'>
-    <mat-grid-tile *ngFor="let dish of dishes" (click)='onSelect(dish)'>
+    <mat-grid-tile *ngFor='let dish of dishes' [routerLink]="['/dishdetail', dish.id]">
+    <!--<mat-grid-tile *ngFor="let dish of dishes" (click)='onSelect(dish)'>-->
       <img height='200px' src={{dish.daycare_image}} alt={{dish.daycare_name}}>
       <mat-grid-tile-footer>
           <h1> {{ dish.daycare_name | uppercase }} </h1>
@@ -28,7 +25,10 @@
     <mat-spinner></mat-spinner><h4>loading ... please wait</h4>
   </div>
 
-<app-dishdetail [dish]='selectedDish'></app-dishdetail>
+<!--<mat-grid-tile *ngFor='let dish of dishes' [routerLink]="['/dishdetail', dish.id]"></mat-grid-tile>-->
+
+
+<!-- <app-dishdetail [dish]='selectedDish'></app-dishdetail> -->
 
 <app-wheredaycare></app-wheredaycare>
 

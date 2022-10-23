@@ -14,7 +14,8 @@ import { SearchComponent } from './search/search.component';
 export const routes: Routes = [
   {path: 'map', component: DaycarenearmemapComponent},
   {path: 'menu', component: MenuComponent},
-  // {path: 'dishdetail/:id', component: DishdetailComponent},
+//the next one wasn't working before
+  {path: 'dishdetail/:id', component: DishdetailComponent},
   {path: 'home', component: HomeComponent},
   {path: 'contact', component: ContactComponent},
   {path: 'search', component: SearchComponent},
