@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HttpClientModule } from '@angular/common/http';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -38,6 +39,7 @@ import { SearchComponent } from './search/search.component';
 import { PromotionService } from './services/promotion.service';
 import { LoginComponent } from './login/login.component';
 
+import { baseURL } from './shared/baseurl';
 
 @NgModule({
   declarations: [
@@ -62,6 +64,7 @@ import { LoginComponent } from './login/login.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     AppRoutingModule,
+    HttpClientModule,
     MatToolbarModule,
     MatListModule,
     MatGridListModule,
@@ -77,13 +80,15 @@ import { LoginComponent } from './login/login.component';
     MatSelectModule,
     MatSlideToggleModule,
     ReactiveFormsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+
   ],
   //a provider is something you want to make available to your whole application.
   //DishService is a service for the whole app now
   providers: [
     DishService,
-    PromotionService
+    PromotionService,
+    { provide: 'BaseURL', useValue: baseURL }
   ],
 
   entryComponents: [

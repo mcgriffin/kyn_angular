@@ -23,7 +23,7 @@
         <h3>{{dish.daycare_name | uppercase }}</h3>
       </mat-card-title>
     </mat-card-header>
-    <img mat-card-image src='{{dish.daycare_image}}' alt='{{dish.daycare_name}}'>
+    <img mat-card-image src="{{BaseURL + dish.daycare_image}}" alt='{{dish.daycare_name}}'>
     <mat-card-content>
       <p>{{ dish.daycare_address }}</p>
     </mat-card-content>
