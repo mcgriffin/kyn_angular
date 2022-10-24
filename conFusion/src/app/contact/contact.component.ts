@@ -15,6 +15,36 @@ export class ContactComponent implements OnInit {
   //reset form back to pristine value
   @ViewChild('fform') feedbackFormDirective: NgForm;
 
+  formErrors:any = {
+    'firstname': '',
+    'lastname': '',
+    'telnum': '',
+    'email': ''
+  };
+
+  validationMessages:any = {
+    'firstname': {
+      'required': 'first name is required',
+      'minlength': 'first name must be at least 2 characters long',
+      'maxlength': 'first name must be less than 25 characters long',
+    },
+    'lastname': {
+      'required': 'last name is required',
+      'minlength': 'last name must be at least 2 characters long',
+      'maxlength': 'last name must be less than 25 characters long'
+    },
+    'telnum': {
+      'required': 'telephone number is required',
+      'pattern': 'telephone number must only contain numbers',
+      'minlength': 'telephone number must be 7 numbers long',
+      'maxlength': 'telephone number must be 7 numbers long'
+    },
+    'email': {
+      'required': 'email is required',
+      'email': 'email is not in valid format'
+    }
+  };
+
   constructor(private fb: FormBuilder) {
     this.createForm();
   }
@@ -24,14 +54,40 @@ export class ContactComponent implements OnInit {
 
   createForm() {
     this.feedbackForm = this.fb.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      telnum: ['', Validators.required],
-      email: ['', Validators.required],
+      firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
+      telnum: ['', [Validators.required, Validators.pattern, Validators.minLength(7), Validators.maxLength(7)] ],
+      email: ['', [Validators.required, Validators.email] ],
       agree: false,
       contacttype: 'None',
       message: ''
     });
+
+    this.feedbackForm.valueChanges
+      .subscribe(data => this.onValueChanged(data));
+
+    this.onValueChanged(); //(re)set form validation messages
+
+  }
+
+  onValueChanged(data?: string) {
+    if (!this.feedbackForm) { return; }
+    const form = this.feedbackForm;
+    for (const field in this.formErrors) {
+      if (this.formErrors.hasOwnProperty(field)) {
+        //clear previous error message (if any)
+        this.formErrors[field] = '';
+        const control = form.get(field);
+        if (control && control.dirty && !control.valid) {
+          const messages = this.validationMessages[field];
+          for ( const key in control.errors ) {
+            if (control.errors.hasOwnProperty(key)) {
+              this.formErrors[field] += messages[key] + ' ';
+            }
+          }
+        }
+      }
+    }
   }
 
   onSubmit() {
