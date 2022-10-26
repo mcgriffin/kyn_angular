@@ -22,6 +22,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
+import { MatSliderModule } from '@angular/material/slider';
 
 import 'hammerjs';
 import { MenuComponent } from './menu/menu.component';
@@ -38,6 +39,7 @@ import { ContactComponent } from './contact/contact.component';
 import { SearchComponent } from './search/search.component';
 import { PromotionService } from './services/promotion.service';
 import { LoginComponent } from './login/login.component';
+import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
 
 import { baseURL } from './shared/baseurl';
 
@@ -81,6 +83,7 @@ import { baseURL } from './shared/baseurl';
     MatSlideToggleModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    MatSliderModule,
 
   ],
   //a provider is something you want to make available to your whole application.
@@ -88,6 +91,7 @@ import { baseURL } from './shared/baseurl';
   providers: [
     DishService,
     PromotionService,
+    ProcessHTTPMsgService,
     { provide: 'BaseURL', useValue: baseURL }
   ],
 

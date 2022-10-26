@@ -12,6 +12,7 @@ import { PromotionService } from '../services/promotion.service';
 export class HomeComponent implements OnInit {
 
 dish: Dish;
+dishErrMess: string;
 promotion: Promotion;
 
 selectedDish: Dish;
@@ -21,7 +22,8 @@ constructor(private dishService: DishService,
   @Inject('BaseURL') public BaseURL:string) { }
 
 ngOnInit() {
-  this.dishService.getFeaturedDish().subscribe(dish => this.dish = dish);
+  this.dishService.getFeaturedDish().subscribe(dish => this.dish = dish,
+    errmess => this.dishErrMess = <any> errmess );
   this.promotionService.getFeaturedPromotion().subscribe(promotion => this.promotion = promotion);
 }
 

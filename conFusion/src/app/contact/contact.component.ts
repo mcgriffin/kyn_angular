@@ -36,8 +36,8 @@ export class ContactComponent implements OnInit {
     'telnum': {
       'required': 'telephone number is required',
       'pattern': 'telephone number must only contain numbers',
-      'minlength': 'telephone number must be 7 numbers long',
-      'maxlength': 'telephone number must be 7 numbers long'
+      'minlength': 'telephone number must be 10 numbers long',
+      'maxlength': 'telephone number must be 10 numbers long'
     },
     'email': {
       'required': 'email is required',
@@ -56,7 +56,7 @@ export class ContactComponent implements OnInit {
     this.feedbackForm = this.fb.group({
       firstname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
       lastname: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(25)]],
-      telnum: ['', [Validators.required, Validators.pattern, Validators.minLength(7), Validators.maxLength(7)] ],
+      telnum: ['', [Validators.required, Validators.pattern, Validators.minLength(10), Validators.maxLength(10)] ],
       email: ['', [Validators.required, Validators.email] ],
       agree: false,
       contacttype: 'None',
